@@ -1,0 +1,69 @@
+body {
+    background-color: #eeeeee;
+    color: #222222;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.items {
+    align-content: flex-start;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+
+.item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #444444;
+    display: block;
+    height: 150px;
+    margin: 5px;
+    padding: 0;
+    position: relative;
+    width: 150px;
+}
+
+.item .name {
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    user-select: none;
+    width: 100%;
+}
+
+.item.file .name {
+    visibility: hidden;
+}
+
+.item.file:hover .name {
+    visibility: visible;
+}
+
+.item .fas {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item .thumbnail {
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    height: 100%;
+    width: 100%;
+}
+
+.details {
+    background-color: red;
+    display: none;
+    flex-basis: 300px;
+}
+
+#refresh {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
