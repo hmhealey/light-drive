@@ -227,7 +227,7 @@ function getPathFromUrl() {
         const [key, value] = param.split('=');
 
         if (key === 'path') {
-            rawPath = value;
+            rawPath = decodeURIComponent(value);
             break;
         }
     }
