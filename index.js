@@ -1,3 +1,4 @@
+import {ClientId} from './credentials.js';
 import {Drive} from './drive.js';
 import './drive-file.js';
 
@@ -8,12 +9,11 @@ const app = {
 let drive;
 
 function makeOAuthUrl() {
-    let clientId = ''; // TODO
-    return 'https://accounts.google.com/o/oauth2/vs/auth? +' +
-        'scope=http%3A%2F%2Fwww.google.apis.com%2Fauth%2Fdrive&' +
+    return 'https://accounts.google.com/o/oauth2/v2/auth?' +
+        'scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&' +
         'redirect_uri=http%3A%2F%2Flocalhost:8000&' +
         'response_type=token&' +
-        'client_id' + clientId;
+        'client_id=' + ClientId;
 }
 
 function getToken() {
