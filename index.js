@@ -173,7 +173,7 @@ function showFile(file, parentId) {
 
         div.className += ' folder';
         div.ondblclick = () => {
-            showNextPage(file.folderId, fole.pageToken);
+            showNextPage(file.folderId, file.pageToken);
 
             div.parentElement.removeChild(div);
         };
@@ -222,7 +222,7 @@ function hideDetails() {
 function getPathFromUrl() {
     let rawPath = '';
 
-    const params = window.location.search.replace(/^?/, '').split('&');
+    const params = window.location.search.replace(/^\?/, '').split('&');
     for (const param of params) {
         const [key, value] = param.split('=');
 

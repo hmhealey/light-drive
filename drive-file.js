@@ -1,4 +1,4 @@
-const template = document.createTemplate('template');
+const template = document.createElement('template');
 template.innerHTML = `<style>
 :host {
     background-color: rgba(0, 0, 0, 0.2);
@@ -11,7 +11,7 @@ template.innerHTML = `<style>
     width: 150px;
 }
 
-:host name {
+:host .name {
     background-color: rgba(255, 255, 255, 0.3);
     overflow: hidden;
     position: absolute;
@@ -24,7 +24,7 @@ template.innerHTML = `<style>
     visibility: visible;
 }
 
-:host .thumbanil {
+:host .thumbnail {
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
@@ -43,7 +43,7 @@ export default class DriveFile extends HTMLElement {
     }
 
     get id() {
-        return this.getAttribute('id', id);
+        return this.getAttribute('id');
     }
 
     set id(id) {
